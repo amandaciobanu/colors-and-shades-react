@@ -1,1 +1,1 @@
-# color-picker-react
+#Shades and Colors generator
