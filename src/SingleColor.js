@@ -5,7 +5,13 @@ const SingleColor = ({rgb, weight, index, hexColor}) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(',');
   const hex = rgbToHex(...rgb);
-  const hexValue= `#${hexColor}`
+  const hexValue= `#${hexColor}`;
+  useEffect(()=>{
+    const timeout = setTimeout(()=>{
+    setAlert(false)
+    }, 3000)
+    return () => clearTimeout(timeout)
+  },[alert])
   return (
       <article
           className={`color ${index > 10 && 'color-light'}`} style={
